@@ -1,0 +1,39 @@
+\documentclass[article,a4paper,oneside]{memoir}
+
+\usepackage[draft]{fixme}
+
+% Fonts
+\usepackage{libertine}
+\usepackage{mathpazo}
+\renewcommand\ttdefault{txtt}
+% \usepackage{tgpagella}
+\usepackage[final]{microtype}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[numbers]{natbib}
+
+\usepackage{graphicx}
+
+% hidelinks gets rid of the ugly colored rectangle around all hyperlinks
+\usepackage[hidelinks]{hyperref}
+
+% New subfloat enables \subbottom[subfigure text]{Content} for subfigures
+\newsubfloat{figure}
+
+\newcommand{\includelegend}[1]{%
+  \includegraphics[width=340pt,height=\mylegendheight]{legends/#1.pdf} \\%
+}
+
+\newcommand{\includeplot}[1]{%
+  %\textattachfile{plot_data/#1.csv}{%
+    \includegraphics[width=170pt,height=\myfigheight]{#1.pdf}%
+  %}%
+}
+
+\input{figureheight}
+
+\begin{document}
+
+\includeplot{plot}
+
+\end{document}
